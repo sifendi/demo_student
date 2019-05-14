@@ -3,19 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 
+// import namabebas from namafile
+import Header from'./Header';
+import Form from'./FormStudent';
+
+
 ///compoent
+// sebuah class / funtion yang bs dipanggil, ini bagian dari UI
+
 //state
 //props
 
 function App() {
   return (
     <div className="App">
-    <p>Gua Masih Belajar</p>
-    <ul>
-    <li>Home</li>
-    <li>Data Murid</li>
-    <li>Tambah Murid</li>
-    </ul>
+    <Header/>
+
+    <Form/>
 
     </div>
   );
