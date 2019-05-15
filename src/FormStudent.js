@@ -26,7 +26,6 @@ addStudent(){
 	})
 }
 
-
 	render(){
 		return(
 			
