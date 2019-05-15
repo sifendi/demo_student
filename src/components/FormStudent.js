@@ -1,5 +1,7 @@
  // === Descturcturing===
 import React, { Component } from 'react'
+import ListStudent from './ListStudent'
+
 export default class FormStudent extends Component{
 
 // ====melakukan export dengan cara biasa / umum 	
@@ -11,7 +13,7 @@ export default class FormStudent extends Component{
 	constructor(){
 		super()
 		this.state={
-			students_array:['Afendi'],
+			students:['Afendi'],
 			currentStudentname :''
 
 		}
@@ -19,10 +21,10 @@ export default class FormStudent extends Component{
 
 
 addStudent(){
-	let currentStudents = this.state.students_array
+	let currentStudents = this.state.students
 	currentStudents.push(this.state.currentStudentname)
 	this.setState({
-		students_array:currentStudents
+		students:currentStudents
 	})
 }
 
@@ -44,11 +46,9 @@ addStudent(){
 			/>
 
 
+			<h2> Student </h2>
+			<ListStudent students={this.state.students}></ListStudent>
 
-
-			{this.state.students_array.map( student => {
-				return <h3>{ student }</h3>
-			})}
 			</div>
 
 			)

@@ -5,7 +5,7 @@ import './App.css';
 
 // import namabebas from namafile
 import Header from'./Header';
-import Form from'./FormStudent';
+import Form from'./components/FormStudent';
 
 
 ///compoent
