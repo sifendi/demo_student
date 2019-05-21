@@ -13,20 +13,13 @@ export default class FormStudent extends Component{
 	constructor(){
 		super()
 		this.state={
-			students:['Afendi'],
+
 			currentStudentname :''
 
 		}
 	}
 
 
-addStudent(){
-	let currentStudents = this.state.students
-	currentStudents.push(this.state.currentStudentname)
-	this.setState({
-		students:currentStudents
-	})
-}
 
 	render(){
 		return(
@@ -42,12 +35,8 @@ addStudent(){
 			<input 
 			type="submit" 
 			value="Simpan"
-			onClick={ () => this.addStudent() }
+			onClick={ () => this.props.addStudent() }
 			/>
-
-
-			<h2> Student </h2>
-			<ListStudent students={this.state.students}></ListStudent>
 
 			</div>
 

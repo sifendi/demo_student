@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,6 +6,7 @@ import './App.css';
 // import namabebas from namafile
 import Header from'./Header';
 import Form from'./components/FormStudent';
+import ListStudent from'./components/ListStudent';
 
 
 ///compoent
@@ -14,15 +15,45 @@ import Form from'./components/FormStudent';
 //state
 //props
 
-function App() {
+export default class App extends Component {
+
+constructor(){
+  super()
+  this.state={
+    students:[
+      {name:'Afendi', age:30}
+      ],
+  }
+}
+
+
+addStudent(name, age){
+  let currentStudents = this.state.students
+  // debugger
+  let newStudent ={
+    name,
+    age
+  }
+  currentStudents.push(this.state.currentStudentname)
+  this.setState({
+    students:currentStudents
+  })
+}
+
+
+render(){
   return (
     <div className="App">
+
     <Header/>
 
-    <Form/>
+    <Form addStudentprops = { () => this.addStudent()}/>
+
+    <h2>Students</h2>
+    <ListStudent students= {this.state.students}/>
 
     </div>
   );
 }
+}
 
-export default App;

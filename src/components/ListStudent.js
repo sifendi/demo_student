@@ -8,7 +8,7 @@ export default class ListStudent extends Component{
 			<div>
 				<ul>
 					{ this.props.students.map( student => {
-						return  <li>{ student }</li>
+						return  <li>{ student.name} , Umur {student.age}</li>
 					})}
 				</ul>
 			</div>
