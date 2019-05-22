@@ -13,12 +13,16 @@ export default class FormStudent extends Component{
 	constructor(){
 		super()
 		this.state={
-
 			currentStudentname :''
-
 		}
 	}
 
+	addnewstudent(){
+		this.props.addStudentprops(
+			this.state.currentStudentname,
+			99
+		)
+	}
 
 
 	render(){
@@ -35,7 +39,7 @@ export default class FormStudent extends Component{
 			<input 
 			type="submit" 
 			value="Simpan"
-			onClick={ () => this.props.addStudent() }
+			onClick={ () => this.addnewstudent() }
 			/>
 
 			</div>

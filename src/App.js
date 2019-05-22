@@ -21,15 +21,20 @@ constructor(){
   super()
   this.state={
     students:[
-      {name:'Afendi', age:30}
+        {
+          name:'Afendi', 
+          age:30
+        }
       ],
   }
 }
 
 
 addStudent(name, age){
-  let currentStudents = this.state.students
+  // const state = this.state
   // debugger
+  let currentStudents = this.state.students
+  console.log(currentStudents)
   let newStudent ={
     name,
     age
@@ -47,7 +52,7 @@ render(){
 
     <Header/>
 
-    <Form addStudentprops = { () => this.addStudent()}/>
+    <Form addStudentprops = { (name,age) => this.addStudent(name,age) }/>
 
     <h2>Students</h2>
     <ListStudent students= {this.state.students}/>
